@@ -1,9 +1,9 @@
 from django import forms
 from .models import Productos
 
-from django.contrib.admin.widgets import FilteredSelectMultiple
+#from django.contrib.admin.widgets import FilteredSelectMultiple
 
-from checkboxselectmultiple.widgets import CheckboxSelectMultiple
+#from checkboxselectmultiple.widgets import CheckboxSelectMultiple
 
 #from django.contrib.admin.widgets import FilteredSelectMultiple #(?)
 
@@ -15,25 +15,6 @@ class ProductosForm(forms.ModelForm):
             'descripcion',
             'precio' 
         ]
-        
-##################
-
-class UserlistForm(forms.Form):
-    users = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,label="Notify and subscribe users to this post:")
-
-"""class RawListaProductosForm(forms.Form):
-    title = forms.MultipleChoiceField(
-        required=False,
-        label='Nombre',
-        widget=CheckboxSelectMultiple(),
-        choices=Productos.nombre
-    )
-
-    class Meta:
-        model = Productos
-        fields = ('nombre',)
-
-"""
 
 
 

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'adminEmpresa',
     'locales',
     'empresa',
-    'checkboxselectmultiple',
+    #'checkboxselectmultiple',
 ]
 
 MIDDLEWARE = [
