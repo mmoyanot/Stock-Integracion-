@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Productos 
+from .models import Productos, productosLocal
 #from checkboxselectmultiple.admin import CheckboxSelectMultipleAdmin
 
 
@@ -17,6 +17,7 @@ from django.contrib import admin
  #   pass
 
 admin.site.register(Productos)
+admin.site.register(productosLocal)
 
 """class MyModelAdmin(admin.ModelAdmin):
     # ...

@@ -4,6 +4,8 @@ from empresa.models import empresaDatos
 # Create your models here.
 
 class localDatos(models.Model):
-    nro_local = models.IntegerField(null=True, blank=True)
     direccion_local = models.CharField(max_length=70, null=True, blank=True)
     rutEmpresa = models.ForeignKey( empresaDatos, on_delete=models.CASCADE, blank=True, null=False)
+    def _str_(self):
+        return self.nombre
+   

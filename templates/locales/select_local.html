@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% for list in lista_Locales %}                            
+                
+    <input type="submit" value='{{ list.direccion_local }} ' href="{% url 'red_productos' pk=list.id %}"/>            
+                  
+{% endfor %}
+
+{% endblock %}

@@ -1,18 +1,19 @@
 from django.shortcuts import render
 
-from .models import Productos
+from .models import Productos, productosLocal
 
-from .forms import ProductosForm
+from .forms import ProductosForm, ProductosLocalForm
 # Create your views here.
 
 
 def vista_lista_productos(request):
-    queryset = Productos.objects.all()
+    queryset1 = Productos.objects.all()
+    queryset2 = productosLocal.objects.all()
     context = {
-        "object_list": queryset
+        "listaGeneral": queryset1,
+        "lista_x_local": queryset2
     }
     return render(request, "productos/lista.html", context)
-
 
 
 

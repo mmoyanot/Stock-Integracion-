@@ -1,5 +1,5 @@
 from django import forms
-from .models import Productos
+from .models import Productos, productosLocal
 
 #from django.contrib.admin.widgets import FilteredSelectMultiple
 
@@ -14,6 +14,15 @@ class ProductosForm(forms.ModelForm):
             'nombre',
             'descripcion',
             'precio' 
+        ]
+
+class ProductosLocalForm(forms.ModelForm):
+    class Meta:
+        model = productosLocal
+        fields = [
+            'nombreProducto',
+            'direccion_local',
+            'rutEmpresa' 
         ]
 
 

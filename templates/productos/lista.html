@@ -6,9 +6,9 @@
 {% block content %}
 
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
 <div class="container">
@@ -16,22 +16,10 @@
         <div class="col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <span></span>  Lista de productos
-                    <div class="pull-right action-buttons">
-                        <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
-                            </button>
-                            <ul class="dropdown-menu slidedown">
-                                <li><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
-                                <li><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-                                <li><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <span></span>  Lista de productos  
                 </div>
-                
-                {% for instance in object_list %}
+                                
+                {% for instance in listaGeneral %}
 
                 <div class="panel-body">
                     <ul class="list-group">
@@ -39,8 +27,23 @@
                             <div class="checkbox">
                                 <input type="checkbox" id="checkbox"/>
                                 <label for="checkbox">
-                                    {{ instance.nombre }} 
-                           
+                                    {{ instance.nombre }}                            
+                                </label>
+                            </div>
+                        </li>                   
+                    </ul>
+                </div>
+                {% endfor %}
+
+
+                {% for listP in lista_x_local %}                            
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="checkbox"/>
+                                <label for="checkbox">
+                                    {{ listP.nombreProducto }}                       
                                 </label>
                             </div>
                             <div class="pull-right action-buttons">
@@ -51,8 +54,9 @@
                         </li>                   
                     </ul>
                 </div>
-                {% endfor %}
+               {% endfor %}
 
+                
 
             </div>
         </div>
