@@ -1,14 +1,29 @@
-{% extends 'base/base.html' %}
-
+{% include 'base/base2.html' %}
 {% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<!----------------------->
-<form method='POST'> {% csrf_token %}
+
+<!--<form method="POST"> {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value='Save' />
-</form>
-<!----------------------->
+</form>-->
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'productos/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'productos/css/style_agregar_producto.css' %}">
+</head>
+
+<div>
+    <form action="." method='POST' class="formulario">{% csrf_token %}
+        {{ form.as_p }} 
+        <input type='submit' value='Guardar' class="btn btn-primary"/> 
+    </form>             
+</div>
+
+<div class="h1for">
+    <h1>AGREGAR PRODUCTO</h1>
+</div>
+
+{% include 'base/footer.html' %}
 
 {% endblock %}

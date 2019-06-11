@@ -17,6 +17,7 @@ class Productos(models.Model):
 
 class productosLocal(models.Model):
     nombreProducto = models.CharField(max_length=70)
+    cantidad = models.IntegerField(null=False)
     direccion_local = models.CharField(max_length=70)
     rutEmpresa = models.ForeignKey(empresaDatos, on_delete=models.CASCADE, blank=True, null=False)
     def _str_(self):

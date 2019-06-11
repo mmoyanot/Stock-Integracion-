@@ -13,14 +13,23 @@ class ProductosForm(forms.ModelForm):
         fields = [
             'nombre',
             'descripcion',
-            'precio' 
+            'precio'
         ]
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class':'input'}),
+            'descripcion': forms.TextInput(attrs={'class':'input'}),
+        }
+
+
+
 
 class ProductosLocalForm(forms.ModelForm):
     class Meta:
         model = productosLocal
         fields = [
+            'id',
             'nombreProducto',
+            'cantidad',
             'direccion_local',
             'rutEmpresa' 
         ]
